@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>{{ .Title }}</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--[if lte IE 8]>
+    <script src="/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="/css/site.css"/>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/ie8.css"/><![endif]-->
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="/css/ie9.css"/><![endif]-->
+</head>
+<body>
+
+<!-- Header -->
+<div id="header">
+
+    <div class="top">
+
+        <!-- Logo -->
+        <div id="logo">
+            <span class="image avatar48"><img src="img/avatar.jpg" alt=""/></span>
+            <h1 id="title">{{ .Site.Params.name }}</h1>
+            <p>{{ .Site.Params.description }}</p>
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li>
+                    <a href="#pictures" id="about-link" class="skel-layers-ignoreHref">
+                        <span class="icon fa-picture-o">Картины</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#travels" id="portfolio-link" class="skel-layers-ignoreHref">
+                        <span class="icon fa-globe">Путешествия</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contacts" id="contact-link" class="skel-layers-ignoreHref">
+                        <span class="icon fa-envelope">Контакты</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <div class="bottom">
+        <!-- Social Icons -->
+        <ul class="icons">
+            {{ range .Site.Params.social }}
+            <li><a href="{{ .link }}" class="icon fa-{{ .icon }}"><span class="label">{{ .medium }}</span></a></li>
+            {{ end }}
+        </ul>
+
+    </div>
+
+</div>
+
+<!-- Main -->
+<div id="main">
+
+    <!-- Portfolio -->
+    <section id="pictures" class="two">
+        <div class="container">
+
+            <header>
+                <h2>Картины</h2>
+            </header>
+
+            <p>
+                Я занимаюсь творчеством уже очень давно. В этом разделе собраны картины созданные мной
+                и краткое описание каждой из них.
+            </p>
+
+
+            <div class="row">
+                <div class="4u 12u$(mobile)">
+                    {{ range .Site.Params.portfolio1 }}
+                    <article class="item">
+                        <a href="{{ .url }}" class="image fit"><img src="{{ .source }}" alt="{{ .alt }}"/></a>
+                        <header>
+                            <h3>{{ .title }}</h3>
+                        </header>
+                    </article>
+                    {{ end }}
+                </div>
+
+                <div class="4u 12u$(mobile)">
+                    {{ range .Site.Params.portfolio2 }}
+                    <article class="item">
+                        <a href="{{ .url }}" class="image fit"><img src="{{ .source }}" alt="{{ .alt }}"/></a>
+                        <header>
+                            <h3>{{ .title }}</h3>
+                        </header>
+                    </article>
+                    {{ end }}
+                </div>
+
+                <div class="4u 12u$(mobile)">
+                    {{ range .Site.Params.portfolio3 }}
+                    <article class="item">
+                        <a href="{{ .url }}" class="image fit"><img src="{{ .source }}" alt="{{ .alt }}"/></a>
+                        <header>
+                            <h3>{{ .title }}</h3>
+                        </header>
+                    </article>
+                    {{ end }}
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="travels" class="three">
+        <div class="container">
+
+            <header>
+                <h2>Путешествия</h2>
+            </header>
+
+            <p>
+                Я очень люблю путешествовать и за свою жизнь посетил множество стран как в России, так и за рубежом.
+                Каждое путеществие я снимаю на камеру и после приезда самостоятельно монтирую видео.
+                Очень надеюсь, что вам вам понравятся мои путешествия.
+            </p>
+
+            {{ range sort .Site.Data.travel "year" "title" }}
+            <h3>{{ .title }}</h3>
+            <iframe class="video" src="https://www.youtube.com/embed/{{ .video }}"></iframe>
+            {{ end }}
+
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacts" class="four">
+        <div class="container">
+
+            <header>
+                <h2>Контакты</h2>
+            </header>
+
+            <form method="post" action="#">
+                <div class="row">
+                    <div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Имя"/></div>
+                    <div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Электронный адрес"/></div>
+                    <div class="12u$">
+                        <textarea name="message" placeholder="Сообщение"></textarea>
+                    </div>
+                    <div class="12u$">
+                        <input type="submit" value="Отправить сообщение"/>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+</div>
+
+<!-- Scripts -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.scrolly.min.js"></script>
+<script src="/js/jquery.scrollzer.min.js"></script>
+<script src="/js/skel.min.js"></script>
+<script src="/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="/js/ie/respond.min.js"></script><![endif]-->
+<script src="/js/main.js"></script>
+
+</body>
+</html>

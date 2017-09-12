@@ -1,0 +1,11 @@
+baseURL = "http://sughin.art/"
+
+languageCode = "ru-RU"
+title = "Александ Сухин"
+
+theme = "prologue"
+
+[params]
+  name = "Александр Сухин"
+  description = "Художник, путешественник"
+  copyright = "Untitled."
