@@ -137,7 +137,7 @@
                 Очень надеюсь, что вам вам понравятся мои путешествия.
             </p>
 
-            {{ range sort .Site.Data.travel "year" "title" }}
+            {{ range sort .Site.Data.travel.list }}
             <h3>{{ .title }}</h3>
             <iframe class="video" src="https://www.youtube.com/embed/{{ .video }}"></iframe>
             {{ end }}
